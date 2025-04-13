@@ -1,9 +1,9 @@
-interface PageProps {
-  params?: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+interface ListPageProps {
+  params: {
+    id: string;
+  };
 }
 
-export default function ListPage({ params }: PageProps) {
-  const id = params?.id;
-  return <div>ListPage {id}</div>;
+export default function ListPage({ params }: ListPageProps) {
+  return <div>ListPage {params.id}</div>;
 }
