@@ -10,7 +10,7 @@ async function getCategory(id: string) {
   return json;
 }
 
-export async function getCategories(id: string) {
+async function getCategories(id: string) {
   const API_URL = "https://books-api.nomadcoders.workers.dev";
   const response = await fetch(`${API_URL}/list?name=${id}`);
   return response.json();
