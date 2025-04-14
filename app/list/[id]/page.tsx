@@ -33,7 +33,7 @@ async function BookInfo({ id }: { id: string }) {
         book.book_image ? (
           <div
             key={book.primary_isbn13}
-            className="flex flex-col items-center w-64"
+            className="flex flex-col items-center w-64 hover:scale-105 transition-all duration-300"
           >
             <div className="w-48 h-72 relative mb-4">
               <Image
@@ -47,11 +47,14 @@ async function BookInfo({ id }: { id: string }) {
             </div>
             <div className="text-center">
               <h2 className="text-lg font-semibold">{book.title}</h2>
-              <h3 className="text-md text-gray-600 mb-2">{book.author}</h3>
-
-              <Link href={book.amazon_product_url} target="_blank">
-                <div className="bg-rose-300 px-4 py-2 rounded-md">Buy Now</div>
-              </Link>
+              <h3 className="text-xl text-gray-400 mb-2">{book.author}</h3>
+              <div className="flex justify-center">
+                <Link href={book.amazon_product_url} target="_blank">
+                  <div className="bg-rose-300 py-1 min-w-50 max-w-50 rounded-xl">
+                    Buy Now
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         ) : (
